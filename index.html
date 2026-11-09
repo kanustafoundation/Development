@@ -1,50 +1,135 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#101827" />
-  <meta name="description" content="Website resmi Kanusta sedang dalam tahap pengembangan. Kami sedang menyiapkan pengalaman digital yang lebih baik untuk Anda." />
-  <title>Kanusta — Website Sedang Dikembangkan</title>
-  <style>
-    :root { color-scheme: dark; --bg:#0b1220; --panel:rgba(20,32,52,.72); --text:#f4f7fb; --muted:#a8b4c7; --accent:#70e1c1; --line:rgba(255,255,255,.12); }
-    * { box-sizing:border-box; }
-    body { margin:0; min-height:100vh; font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; color:var(--text); background:radial-gradient(ellipse at 15% 15%,rgba(48,121,128,.25),transparent 42%),radial-gradient(ellipse at 85% 80%,rgba(57,86,158,.25),transparent 40%),var(--bg); display:grid; place-items:center; padding:28px; overflow-x:hidden; }
-    body:before, body:after { content:""; position:fixed; width:340px; height:340px; border:1px solid rgba(112,225,193,.12); border-radius:50%; pointer-events:none; }
-    body:before { top:-190px; right:8%; box-shadow:0 0 0 35px rgba(112,225,193,.025),0 0 0 70px rgba(112,225,193,.02); }
-    body:after { bottom:-230px; left:4%; width:440px; height:440px; }
-    .wrap { width:min(100%,900px); position:relative; z-index:1; }
-    .top { display:flex; align-items:center; justify-content:space-between; margin-bottom:24px; }
-    .brand { display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.16em; font-size:18px; }
-    .mark { width:34px; height:34px; display:grid; place-items:center; border:1px solid rgba(112,225,193,.55); border-radius:11px; color:var(--accent); font-size:17px; letter-spacing:0; background:rgba(112,225,193,.08); }
-    .status { display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--line); border-radius:99px; color:#c6d2df; font-size:12px; letter-spacing:.04em; background:rgba(255,255,255,.035); }
-    .dot { width:7px; height:7px; background:var(--accent); border-radius:50%; box-shadow:0 0 12px var(--accent); }
-    .card { border:1px solid var(--line); border-radius:28px; padding:clamp(30px,7vw,72px); background:var(--panel); backdrop-filter:blur(18px); box-shadow:0 30px 100px rgba(0,0,0,.28); text-align:center; }
-    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; }
-    h1 { max-width:720px; margin:18px auto 18px; font-size:clamp(38px,7vw,68px); line-height:1.04; letter-spacing:-.055em; }
-    h1 span { color:var(--accent); }
-    .desc { max-width:570px; margin:0 auto; color:var(--muted); font-size:clamp(15px,2vw,18px); line-height:1.8; }
-    .divider { width:54px; height:3px; border-radius:9px; margin:32px auto; background:linear-gradient(90deg,transparent,var(--accent),transparent); }
-    .note { color:#d5deea; font-size:14px; line-height:1.7; }
-    .footer { text-align:center; padding:22px 12px 0; color:#7f8da2; font-size:12px; letter-spacing:.04em; }
-    @media(max-width:520px) { body { padding:18px; } .top { align-items:flex-start; gap:14px; } .brand { font-size:15px; } .status { font-size:10px; padding:7px 9px; } .card { border-radius:22px; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yayasan Kamulyan Nusantara Semesta - Sedang Dalam Pengembangan</title>
+    
+    <!-- Include Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Include Google Fonts: Cinzel for majestic headings, Lora for elegant body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            DEFAULT: '#D4AF37', // Classic metallic gold
+                            light: '#F3E5AB',
+                            dark: '#AA8529',
+                            muted: '#C5A059'
+                        },
+                        darkred: {
+                            DEFAULT: '#8B0000', // Deep cultural red
+                            dark: '#5C0000'
+                        },
+                        charcoal: {
+                            DEFAULT: '#0a0a0a',
+                            light: '#1a1a1a'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Cinzel', 'serif'],
+                        body: ['Lora', 'serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for specific visual effects -->
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #AA8529 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Subtle cultural geometric background pattern */
+        .bg-pattern {
+            background-color: #0a0a0a;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
 </head>
-<body>
-  <main class="wrap">
-    <header class="top">
-      <div class="brand"><span class="mark">K</span><span>KANUSTA</span></div>
-      <div class="status"><span class="dot"></span> DALAM PENGEMBANGAN</div>
-    </header>
-    <section class="card" aria-labelledby="headline">
-      <div class="eyebrow">Sebuah awal yang baru</div>
-      <h1 id="headline">Kami sedang menyiapkan sesuatu yang <span>istimewa.</span></h1>
-      <p class="desc">Website Kanusta saat ini masih dalam tahap pengembangan. Kami sedang menyusun dan menyempurnakan setiap bagiannya agar dapat menghadirkan pengalaman yang lebih baik untuk Anda.</p>
-      <div class="divider"></div>
-      <p class="note">Terima kasih atas kunjungan dan kesabaran Anda.<br />Silakan kembali lagi dalam waktu dekat.</p>
-    </section>
-    <footer class="footer">&copy; <span id="year"></span> KANUSTA. Hak cipta dilindungi.</footer>
-  </main>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<body class="bg-pattern text-gray-300 font-body antialiased min-h-screen flex flex-col justify-center items-center relative overflow-hidden selection:bg-gold selection:text-charcoal">
+    
+    <!-- Ambient Background Glow Effects -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-4xl max-h-4xl bg-darkred blur-[150px] rounded-full opacity-15 pointer-events-none z-0"></div>
+    <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-70 z-10"></div>
+
+    <!-- Main Content Container -->
+    <main class="z-10 container mx-auto px-6 py-16 flex flex-col items-center text-center max-w-4xl relative">
+        
+        <!-- Foundation Logo -->
+        <div class="mb-12 relative group">
+            <!-- Glow behind logo -->
+            <div class="absolute inset-0 bg-gold blur-3xl opacity-20 rounded-full scale-110 group-hover:opacity-30 transition-opacity duration-700"></div>
+            <!-- Ensure exact filename is used -->
+            <img src="https://github.com/kanustafoundation/Development/blob/main/img/kanusta.png" 
+                 alt="Logo Yayasan Kamulyan Nusantara Semesta" 
+                 class="w-48 md:w-64 lg:w-72 drop-shadow-[0_10px_25px_rgba(0,0,0,0.8)] relative z-10 transition-transform duration-700 hover:scale-105">
+        </div>
+
+        <!-- Status Indicator -->
+        <div class="flex items-center gap-4 mb-6 opacity-90">
+            <span class="w-8 md:w-12 h-px bg-gold/60 block"></span>
+            <span class="tracking-[0.25em] text-gold-light text-xs md:text-sm font-semibold uppercase font-heading animate-pulse-slow">
+                Situs Sedang Dalam Pengembangan
+            </span>
+            <span class="w-8 md:w-12 h-px bg-gold/60 block"></span>
+        </div>
+
+        <!-- Majestic Headline -->
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-heading mb-8 gold-gradient-text leading-tight drop-shadow-xl">
+            Menjaga Warisan,<br />Membangun Peradaban
+        </h1>
+
+        <!-- Description Paragraph -->
+        <p class="text-lg md:text-xl text-gray-300/90 mb-12 max-w-2xl leading-relaxed font-light">
+            <strong class="text-gold-light font-medium">Yayasan Kamulyan Nusantara Semesta</strong> berdedikasi luhur dalam ranah arkeologi dan pelestarian cagar budaya Nusantara. Saat ini, kami sedang merajut langkah untuk menghadirkan portal media digital yang akan menyajikan edukasi, informasi, serta inspirasi tentang kekayaan sejarah bangsa kita.
+        </p>
+
+        <!-- Decorative Separator -->
+        <div class="flex items-center justify-center w-full max-w-[200px] mb-12 gap-3 opacity-60">
+            <div class="h-px bg-gold flex-grow"></div>
+            <div class="w-2.5 h-2.5 rotate-45 bg-darkred border border-gold"></div>
+            <div class="h-px bg-gold flex-grow"></div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="flex flex-col items-center gap-6">
+            <p class="text-sm md:text-base text-gray-400 italic">
+                Sembari menunggu, mari terhubung bersama kami.
+            </p>
+            <a href="mailto:kanusta.foundation@gmail.com" 
+               class="group relative px-8 py-3.5 bg-charcoal-light border border-gold/50 text-gold font-heading font-semibold uppercase tracking-widest overflow-hidden transition-all duration-500 hover:border-gold hover:shadow-[0_0_20px_rgba(212,175,55,0.25)] rounded-sm">
+                <!-- Hover background effect -->
+                <div class="absolute inset-0 bg-gold w-0 transition-all duration-500 ease-out group-hover:w-full opacity-10"></div>
+                <span class="relative z-10 flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    Hubungi Kami
+                </span>
+            </a>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="absolute bottom-6 text-center w-full text-[10px] sm:text-xs text-gray-500 font-heading tracking-[0.2em] opacity-50 z-10 px-4">
+        &copy; 2026 YAYASAN KAMULYAN NUSANTARA SEMESTA. HAK CIPTA DILINDUNGI.
+    </footer>
+
 </body>
 </html>
